@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir Chat de WhatsApp</title>
+    <link rel="shortcut icon" href="whatsapp-logo-24.png" type="image/x-icon">
+    
+    <!-- Metaetiquetas para ocultar la barra de direcciones en dispositivos móviles -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #telefono {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+        }
+
+        #codigo-pais {
+            padding: 10px;
+            margin: 10px;
+            width: 100px;
+        }
+
+        #abrir-chat {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #25D366; /* Color verde de WhatsApp */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        #abrir-chat:hover {
+            background-color: #128C7E; /* Cambia el color al pasar el ratón sobre él */
+        }
+
+        /* Estilos para el footer */
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            /* Gradiente lineal de arriba hacia abajo */
+            background: linear-gradient(to bottom,rgb(74, 139, 61),rgb(54, 107, 19));      
+            color: #fff;
+            /*padding: 10px;*/
+            text-align: center;
+            font-size: 14px;
+            margin-left: 0px;
+        }
+        
+         /* Media query para ajustes en dispositivos móviles */
+         @media screen and (max-width: 768px) {
+            #codigo-pais,
+            #telefono {
+                /* width: 100%;  Ajusta el ancho al 100% en dispositivos móviles */
+                width:min-content; /* Ancho automático en dispositivos móviles */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Abre un chat de WhatsApp</h1>
+
+    <label for="codigo-pais">Código de país:</label>
+    <select id="codigo-pais">
+        <option value="+1">🇺🇸 +1 (EE. UU.)</option>
+        <option value="+44">🇬🇧 +44 (Reino Unido)</option>
+        <option value="+54" selected>🇦🇷 +54 (Argentina)</option>
+        <option value="+61">🇦🇺 +61 (Australia)</option>
+        <option value="+33">🇫🇷 +33 (Francia)</option>
+        <option value="+49">🇩🇪 +49 (Alemania)</option>
+        <option value="+81">🇯🇵 +81 (Japón)</option>
+        <option value="+86">🇨🇳 +86 (China)</option>
+        <option value="+91">🇮🇳 +91 (India)</option>
+        <option value="+52">🇲🇽 +52 (México)</option>
+        <option value="+34">🇪🇸 +34 (España)</option>
+        <option value="+55">🇧🇷 +55 (Brasil)</option>
+        <!-- Agrega más opciones según sea necesario -->
+    </select>
+    <br>
+    <label for="telefono">Número de teléfono:</label>
+    <input type="text" id="telefono" placeholder="Ingrese el número" inputmode="numeric">
+
+    <!-- El enlace ahora utiliza JavaScript para obtener el número de teléfono del input -->
+    <a href="#" id="abrir-chat" onclick="abrirChat()">Abrir chat de WhatsApp</a>
+
+    <footer>        
+        <p>&copy; 2023 Sanba Software. Todos los derechos reservados. Diseñado por RDA para Sanba Software.</p>  
+    </footer>
+
+    <script>
+        function abrirChat() {
+            var codigoPais = document.getElementById("codigo-pais").value;
+            var telefono = document.getElementById("telefono").value;
+            var enlace = "https://wa.me/" + codigoPais + telefono + "?";
+            window.open(enlace, "_blank");
+        }
+    </script>
+
+</body>
+</html>

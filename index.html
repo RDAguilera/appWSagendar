@@ -10,8 +10,8 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    
-    <style>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!--<style>
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -71,7 +71,7 @@
                 width:min-content; /* Ancho automático en dispositivos móviles */
             }
         }
-    </style>
+    </style>-->
 </head>
 <body>
 
@@ -99,19 +99,27 @@
 
     <!-- El enlace ahora utiliza JavaScript para obtener el número de teléfono del input -->
     <a href="#" id="abrir-chat" onclick="abrirChat()">Abrir chat de WhatsApp</a>
+    <div class="slideshow-container">
+        <div class="slideshow">
+            <img src="img/publiDP.png" class="slide" alt="Distribuidora de la patagonia SRL"><!-- Distribuidora-->
+            <img src="img/publiCarson.png" class="slide" alt="Centro Educativo CARSON"><!-- CARSON -->
+            <!--<img src="imagen3.jpg" class="slide" alt="Gimnasio">GyM-->
+        </div>
+        <!-- Botones de navegación -->
+        <!--<a class="prev" onclick="moveSlide(-1)">&#10094;</a>-->
+        <!--<a class="next" onclick="moveSlide(1)">&#10095;</a>-->
+    </div>
+    <!-- Indicadores de puntos -->
+    <!--<div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>-->
 
     <footer>        
         <p>&copy; 2023 Sanba Software. Todos los derechos reservados. Diseñado por RDA para Sanba Software.</p>  
-    </footer>
-
-    <script>
-        function abrirChat() {
-            var codigoPais = document.getElementById("codigo-pais").value;
-            var telefono = document.getElementById("telefono").value;
-            var enlace = "https://wa.me/" + codigoPais + telefono + "?";
-            window.open(enlace, "_blank");
-        }
-    </script>
-
+    </footer>       
 </body>
+<!-- Instancia el archivo JS -->
+<script src="script.js"></script>
 </html>

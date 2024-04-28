@@ -2,6 +2,9 @@ const slideshow = document.querySelector('.slideshow');
 const images = slideshow.querySelectorAll('img');
 let currentImageIndex = 0;
 
+const numero = 3585627758;
+const url = `https://rdaguilera.github.io/appWSagendar/?numero=${numero}`;
+
 function showImage(index) {
   images.forEach(image => image.style.display = 'none');
   images[index].style.display = 'block';
@@ -59,3 +62,15 @@ function abrirChat() {
   var enlace = "https://wa.me/" + codigoPais + telefono + "?";
   window.open(enlace, "_blank");
 }
+
+// Función para obtener parámetros de la URL
+function obtenerParametroURL(nombreParametro) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(nombreParametro);
+}
+
+// Obtener el valor del parámetro "dato" de la URL
+const dato = obtenerParametroURL('numero');
+
+// Insertar el valor obtenido en el campo de texto
+document.getElementById('telefono').value = dato;

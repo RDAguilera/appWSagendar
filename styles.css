@@ -17,6 +17,16 @@ body {
   text-align: center;
   margin: 0px;
 }
+.controles{
+  display:inline-block;
+  text-align:justify;
+
+}
+
+.codPais{
+  margin-left: 28px;
+  padding: 0;
+}
 
 h1 {
   color: #333;
@@ -24,13 +34,13 @@ h1 {
 
 #telefono {
   padding: 10px;
-  margin: 10px;
+  margin: 0px;
   width: 200px;
 }
 
 #codigo-pais {
   padding: 10px;
-  margin: 10px;
+  margin: 0px;
   width: 100px;
 }
 
